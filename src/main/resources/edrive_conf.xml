@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="envLocal">http://api.dev.zmw.com:8080</entry>
+	<entry key="envTest">http://api.dev.cloud.21cn.com:8001</entry>
+	<entry key="envTestCloud">http://dev.cloud.21cn.com:8000</entry>
+	<entry key="envTestTrans">http://transfer1.dev.cloud.21cn.com:8002</entry>
+	
+	<entry key="envBusiness">http://api.cloud.189.cn</entry>
+	<entry key="envBusinessTrans">http://upload.cloud.189.cn</entry>
+	<entry key="envBusinessCloud">http://cloud.189.cn</entry>
+
+	<!-- 用户接口 -->
+	<entry key="getUserInfoUrl">/getUserInfo.action</entry>
+	<entry key="authorizeUrl">/open/oauth2/authorize.action</entry>
+	<entry key="getAccessTokenUrl">/open/oauth2/accessToken.action</entry>
+	
+	<!-- 文件接口 -->
+	<entry key="getFileInfoUrl">/getFileInfo.action</entry>
+	<entry key="getFolderInfoUrl">/getFolderInfo.action</entry>
+	<entry key="createShareLinkUrl">/createShareLink.action</entry>
+	<entry key="listFilesUrl">/listFiles.action</entry>
+	<entry key="listMediaFilesUrl">/listMediaFiles.action</entry>
+	<entry key="searchFilesUrl">/searchFiles.action</entry>
+	<entry key="getFileDiffListUrl">/getFileDiffList.action</entry>
+	<entry key="getFileDownloadUrl">/getFileDownloadUrl.action</entry>
+	<entry key="batchGetFileDownloadUrl">/batchGetFileDownloadUrl.action</entry>
+	<entry key="createFolderUrl">/createFolder.action</entry>
+	<entry key="createUploadFile">/createUploadFile.action</entry>
+	<entry key="getUploadFileStatusUrl">/getUploadFileStatus.action</entry>
+	<entry key="renameFolderUrl">/renameFolder.action</entry>
+	<entry key="renameFileUrl">/renameFile.action</entry>
+	<entry key="copyFileUrl">/copyFile.action</entry>
+	<entry key="moveFolderUrl">/moveFolder.action</entry>
+	<entry key="moveFileUrl">/moveFile.action</entry>
+	<entry key="deleteFolderUrl">/deleteFolder.action</entry>
+	<entry key="deleteFileUrl">/deleteFile.action</entry>
+	
+	<!-- 传输服务 -->
+	<entry key="uploadSmallFile">/uploadFile.action</entry>
+	<entry key="uploadFileData">/v4/uploadFileData.action</entry>
+	<entry key="commitUploadFile">/v4/commitUploadFile.action</entry>
+
+	 
+</properties>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding>
+    <mapping abstract="true" class="so.glad.channel.edrive.entity.Root"/>
+    <mapping name="user" class="so.glad.channel.edrive.entity.UserInfo" extends="so.glad.channel.edrive.entity.Root">
+        <structure map-as="so.glad.channel.edrive.entity.Root" />
+        <structure name="loginName" usage="optional"><value style="text" field="loginName" /></structure>
+        <structure name="capacity" usage="optional"><value style="text" field="capacity" type="java.lang.Long"/></structure>
+        <structure name="available" usage="optional"><value style="text" field="available" type="java.lang.Long" /></structure>
+        <structure name="maxFilesize" usage="optional"><value style="text" field="maxFilesize" type="java.lang.Long"/></structure>
+        <structure name="mail189UsedSize" usage="optional"><value style="text" field="mailUsedSize" type="java.lang.Long"/></structure>
+        <structure name="orderAmount" usage="optional"><value style="text" field="orderAmount" type="java.lang.Long"/></structure>
+        <structure name="provinceCode" usage="optional"><value style="text" field="provinceCode" type="java.lang.Long"/></structure>
+    </mapping>
+    <mapping name="userExt" class="so.glad.channel.edrive.entity.UserProfile" extends="so.glad.channel.edrive.entity.Root">
+        <structure map-as="so.glad.channel.edrive.entity.Root" />
+        <structure name="loginName" usage="optional"><value style="text" field="loginName" /></structure>
+        <structure name="headPortraitUrl" usage="optional"><value style="text" field="headPortraitUrl"/></structure>
+        <structure name="nickname" usage="optional"><value style="text" field="nickname" /></structure>
+        <structure name="gender" usage="optional"><value style="text" field="gender"/></structure>
+        <structure name="birthday" usage="optional"><value style="text" field="birthday" /></structure>
+        <structure name="realname" usage="optional"><value style="text" field="realname"/></structure>
+        <structure name="mobile" usage="optional"><value style="text" field="mobile" /></structure>
+        <structure name="email" usage="optional"><value style="text" field="email"/></structure>
+        <structure name="idNumber" usage="optional"><value style="text" field="idNumber" /></structure>
+        <structure name="safeMobile" usage="optional"><value style="text" field="safeMobile"/></structure>
+    </mapping>
+    <mapping name="fileInfo" class="so.glad.channel.edrive.entity.FileInfo" extends="so.glad.channel.edrive.entity.Root">
+        <structure map-as="so.glad.channel.edrive.entity.Root" />
+        <structure name="id" usage="optional"><value style="text" field="id" type="java.lang.Long"/></structure>
+        <structure name="parentFolderId" usage="optional"><value style="text" field="parentFolderId" type="java.lang.Long"/></structure>
+        <structure name="path" usage="optional"><value style="text" field="path" /></structure>
+        <structure name="name" usage="optional"><value style="text" field="name"/></structure>
+        <structure name="size" usage="optional"><value style="text" field="size" type="java.lang.Long" /></structure>
+        <structure name="md5" usage="optional"><value style="text" field="md5"/></structure>
+        <structure name="createDate" usage="optional"><value style="text" field="createDate" /></structure>
+        <structure name="lastOpTime" usage="optional"><value style="text" field="lastOpTime"/></structure>
+        <structure name="mediaType" usage="optional"><value style="text" field="mediaType" type="java.lang.Integer"/></structure>
+        <collection name="mediaAttr" usage="optional" create-type="java.util.ArrayList" field="mediaAttrs"
+                    item-type="so.glad.channel.edrive.entity.MediaAttr">
+            <structure name="mediaAttr" usage="optional">
+                <structure name="streamKind" usage="optional"><value style="text" field="streamKind"/></structure>
+                <structure name="name" usage="optional"><value style="text" field="name"/></structure>
+                <structure name="value" usage="optional"><value style="text" field="value"/></structure>
+            </structure>
+        </collection>
+        <structure name="icon" usage="optional" class="so.glad.channel.edrive.entity.Icon" field="icon">
+            <structure name="smallUrl" usage="optional"><value style="text" field="smallUrl"/></structure>
+            <structure name="mediumUrl" usage="optional"><value style="text" field="mediumUrl"/></structure>
+            <structure name="largeUrl" usage="optional"><value style="text" field="largeUrl"/></structure>
+            <structure name="max600" usage="optional"><value style="text" field="max600"/></structure>
+        </structure>
+        <structure name="rev" usage="optional"><value style="text" field="rev" type="java.lang.Long" /></structure>
+        <structure name="fileDownloadUrl" usage="optional"><value style="text" field="fileDownloadUrl" /></structure>
+    </mapping>
+
+    <mapping abstract="true" class="so.glad.channel.edrive.entity.FileEntry" extends="so.glad.channel.edrive.entity.Root">
+        <structure map-as="so.glad.channel.edrive.entity.Root" />
+        <structure name="id" usage="optional"><value style="text" field="id" type="java.lang.Long"/></structure>
+        <structure name="name" usage="optional"><value style="text" field="name" /></structure>
+        <structure name="createDate" usage="optional"><value style="text" field="createDate" /></structure>
+        <structure name="lastOpTime" usage="optional"><value style="text" field="lastOpTime" /></structure>
+        <structure name="rev" usage="optional"><value style="text" field="rev" type="java.lang.Long"/></structure>
+    </mapping>
+    <mapping name="folder" class="so.glad.channel.edrive.entity.Folder" extends="so.glad.channel.edrive.entity.FileEntry">
+        <structure map-as="so.glad.channel.edrive.entity.FileEntry" />
+    </mapping>
+
+    <mapping name="file" class="so.glad.channel.edrive.entity.File" extends="so.glad.channel.edrive.entity.FileEntry">
+        <structure map-as="so.glad.channel.edrive.entity.FileEntry" />
+        <structure name="size" usage="optional"><value style="text" field="size" type="java.lang.Long" /></structure>
+        <structure name="md5" usage="optional"><value style="text" field="md5" /></structure>
+    </mapping>
+
+    <mapping name="listFiles" class="so.glad.channel.edrive.entity.FilesList" extends="so.glad.channel.edrive.entity.Root">
+        <structure map-as="so.glad.channel.edrive.entity.Root" />
+        <structure name="lastRev" usage="optional"><value style="text" field="lastRev"/></structure>
+        <structure name="fileList" field="fileList" class="so.glad.channel.edrive.entity.FolderBundle" >
+            <structure name="count" usage="optional"><value style="text" field="count" type="java.lang.Integer"/></structure>
+            <collection create-type="java.util.ArrayList" field="fileList" usage="optional" item-type="so.glad.channel.edrive.entity.File"/>
+            <collection create-type="java.util.ArrayList" field="folderList" usage="optional" item-type="so.glad.channel.edrive.entity.Folder"/>
+        </structure>
+    </mapping>
+</binding>

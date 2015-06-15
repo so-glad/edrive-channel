@@ -24,9 +24,9 @@ public class OAuth2TemplateTest {
 
     private OAuth2Operations oAuth2Operations;
 
-    private String appKey = "600098230";
+    private String appKey = "600080118";
 
-    private String appSecret = "559f25c2c1e7952cd37e69fb1eff0042";
+    private String appSecret = "21184e4f8575ec23b909fde70f6f9ce0";
 
     private Date date = new Date();
 
@@ -70,7 +70,7 @@ public class OAuth2TemplateTest {
     @Test
     public void testCodeRefreshAccess(){
         Map<String, String> map = Maps.newHashMap();
-        map.put("code", "77249974");
+        map.put("code", "03745316");
         AccessGrant accessGrant = oAuth2Operations.refreshAccess(Const.GrantType.AUTHORIZATION_CODE, map);
         accessGrant.getAccessToken();
         accessGrant.getExpireTime();

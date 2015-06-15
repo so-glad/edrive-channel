@@ -18,10 +18,13 @@ public class SogladEdriveEntry {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	private String endPoint = null;
+
 	private String cloudPoint = null;
+
 	private String transPoint = null;
 
 	private AuthorizeParameters authorizeParameters;
+
 	private SimpleClient client = new SimpleClientImpl();
 
 	public SogladEdriveEntry() {

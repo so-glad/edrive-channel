@@ -16,21 +16,22 @@ import so.glad.client.SimpleClientImpl;
 public class FileTemplateTest {
     private FileOperations fileOperations;
 
-    private String appKey = "600098230";
+    private String appKey = "600080118";//"600098230";
 
-    private String appSecret = "559f25c2c1e7952cd37e69fb1eff0042";
+    private String appSecret = "21184e4f8575ec23b909fde70f6f9ce0";//"559f25c2c1e7952cd37e69fb1eff0042";
 
     @Before
     public void prepare(){
         FileTemplate fileTemplate = new FileTemplate(appKey, appSecret);
-        fileTemplate.setAccessToken("E59D69237620D8BC61EF69615E704B49");
+        fileTemplate.setAccessToken("0BB73CD2A8433BD84C413DF4D9B8387B"/*"E59D69237620D8BC61EF69615E704B49"*/);
         fileTemplate.setClient(new SimpleClientImpl());
         fileTemplate.setStreamSerializer(new JibxStreamSerializer());
         fileOperations = fileTemplate;
     }
+
     @Test
     public void testGetFileInfo(){
-        FileInfo fileInfo = fileOperations.getFileInfo(813991314602825l, null, true, true);
+        FileInfo fileInfo = fileOperations.getFileInfo(null, "/我的文件/我的应用/AMOC/csgo/maps/ze_ATIX_panic_b3t_p.bsp", true, true);
         Assert.assertNotNull(fileInfo);
     }
 

@@ -10,7 +10,8 @@ import so.glad.serializer.StreamSerializer;
 
 
 /**
- * Created by Cartoon on 2015/3/26.
+ * @author Cartoon
+ * on 2015/3/26.
  */
 public class UserTemplate extends AbstractOperations implements UserOperations {
 

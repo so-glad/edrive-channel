@@ -25,7 +25,7 @@ public class OAuth2Template extends AbstractOperations implements OAuth2Operatio
         super(appKey, appSecret);
     }
 
-    private OAuthUtil oauthUtil;
+    private OAuthUtil oauthUtil = OAuthUtil.DEFAULT_INSTANCE;
 
     @Override
     public String buildAuthorizeUrl(GrantType grantType, OAuth2Parameters parameters) {

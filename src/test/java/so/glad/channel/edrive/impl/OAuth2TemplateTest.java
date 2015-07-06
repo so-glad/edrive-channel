@@ -18,15 +18,15 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * Created by Cartoon on 2015/3/27.
+ * @author by Cartoon on 2015/3/27.
  */
 public class OAuth2TemplateTest {
 
     private OAuth2Operations oAuth2Operations;
 
-    private String appKey = "600080118";
+    private String appKey = "600102147";
 
-    private String appSecret = "21184e4f8575ec23b909fde70f6f9ce0";
+    private String appSecret = "3e5fd83e4b721c4fd3b03285deda92d6";
 
     private Date date = new Date();
 
@@ -70,7 +70,7 @@ public class OAuth2TemplateTest {
     @Test
     public void testCodeRefreshAccess(){
         Map<String, String> map = Maps.newHashMap();
-        map.put("code", "03745316");
+        map.put("code", "63605194");
         AccessGrant accessGrant = oAuth2Operations.refreshAccess(Const.GrantType.AUTHORIZATION_CODE, map);
         accessGrant.getAccessToken();
         accessGrant.getExpireTime();

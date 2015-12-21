@@ -7,7 +7,8 @@ import org.springframework.web.client.RestTemplate;
 import so.glad.channel.edrive.Const;
 
 /**
- * Created by palmtale on 2015/3/26.
+ * @author palmtale
+ * on 2015/3/26.
  */
 public abstract class AbstractOperations {
 

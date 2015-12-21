@@ -8,7 +8,7 @@ version = '1.0.0'
 
 repositories {
     maven {
-        url "http://gear.glad.so:81/nexus/content/groups/public/"
+        url "http://gear.glad.so/nexus/content/groups/public/"
     }
 }
 
@@ -32,12 +32,12 @@ dependencies {
     compile("org.slf4j:slf4j-api:1.7.12")
     compile("com.google.guava:guava:18.0")
     compile("so.glad:soglad-client:1.0.0")
-    compile("so.glad:soglad-channel:1.0")
-    compile("org.springframework.social:spring-social-core:1.1.0.RELEASE")
-    compile("org.springframework.social:spring-social-config:1.1.0.RELEASE")
-    compile("org.springframework.social:spring-social-security:1.1.0.RELEASE")
-    compile("com.fasterxml.jackson.core:jackson-core:2.5.2")
-    compile("com.fasterxml.jackson.core:jackson-databind:2.5.2")
+    compile("so.glad:soglad-channel:1.0.1")
+    compile("org.springframework.social:spring-social-core:1.1.2.RELEASE")
+    compile("org.springframework.social:spring-social-config:1.1.2.RELEASE")
+    compile("org.springframework.social:spring-social-security:1.1.2.RELEASE")
+    compile("com.fasterxml.jackson.core:jackson-core:2.5.4")
+    compile("com.fasterxml.jackson.core:jackson-databind:2.5.4")
     compile("org.jibx:jibx-run:1.2.6")
     jibx "org.jibx:jibx-bind:1.2.6"
     jibx "org.jibx:jibx-tools:1.2.6"
@@ -45,7 +45,7 @@ dependencies {
     testCompile("org.slf4j:slf4j-log4j12:1.7.12")
     testCompile("log4j:log4j:1.2.17")
     testCompile("org.jmockit:jmockit:1.16")
-    testCompile("junit:junit:4.11")
+    testCompile("junit:junit:4.12")
 }
 
 publishing {
@@ -64,11 +64,11 @@ publishing {
 
     repositories {
         maven {
-            artifactUrls ["http://gear.glad.so:81/nexus/content/groups/public/"]
+            artifactUrls ["http://gear.glad.so/nexus/content/groups/public/"]
             if(project.version.endsWith('-SNAPSHOT')) {
-                url "http://gear.glad.so:81/nexus/content/repositories/snapshots/"
+                url "http://gear.glad.so/nexus/content/repositories/snapshots/"
             } else {
-                url "http://gear.glad.so:81/nexus/content/repositories/releases/"
+                url "http://gear.glad.so/nexus/content/repositories/releases/"
             }
             credentials {
                 username "${PUBLISH_USERNAME}"

@@ -6,20 +6,26 @@ import java.util.Map;
 import so.glad.channel.edrive.Const;
 import so.glad.channel.edrive.EdriveConfig;
 import so.glad.channel.edrive.utils.CodecUtil;
-import so.glad.channel.oauth2.AccessGrant;
 
+import so.glad.channel.oauth2.AccessGrant;
 import so.glad.channel.oauth2.GrantType;
 import so.glad.channel.oauth2.OAuth2Operations;
 import so.glad.channel.oauth2.OAuth2Parameters;
+import so.glad.channel.oauth2.util.OAuthUtil;
+
+import javax.annotation.Resource;
 
 /**
- * Created by Cartoon on 2015/3/26.
+ * @author Cartoon
+ * on 2015/3/26.
  */
 public class OAuth2Template extends AbstractOperations implements OAuth2Operations {
 
     public OAuth2Template(String appKey, String appSecret){
         super(appKey, appSecret);
     }
+
+    private OAuthUtil oauthUtil = OAuthUtil.DEFAULT_INSTANCE;
 
     @Override
     public String buildAuthorizeUrl(GrantType grantType, OAuth2Parameters parameters) {
@@ -65,6 +71,11 @@ public class OAuth2Template extends AbstractOperations implements OAuth2Operatio
             url.append("&").append(map.getKey()).append( "=").append(map.getValue());
         }
         getLogger().debug("refreshAccess() - url=" + url);
-        return AccessGrant.fromJSONString(getClient().get(url.toString()));
+        return oauthUtil.fromJson(getClient().get(url.toString()));
+    }
+
+    @Resource
+    public void setOauthUtil(OAuthUtil oauthUtil){
+        this.oauthUtil = oauthUtil;
     }
 }

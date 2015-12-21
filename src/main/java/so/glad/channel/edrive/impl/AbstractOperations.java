@@ -3,11 +3,11 @@ package so.glad.channel.edrive.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import so.glad.channel.edrive.AuthorizeParameters;
 import so.glad.channel.edrive.Const;
 import so.glad.channel.edrive.EdriveConfig;
 import so.glad.channel.edrive.utils.CodecUtil;
 import so.glad.channel.edrive.utils.DateUtil;
+import so.glad.channel.oauth2.AuthorizeParameters;
 import so.glad.client.SimpleClient;
 import so.glad.client.http.HttpConnectionContext;
 import so.glad.client.http.HttpMethod;
@@ -16,12 +16,12 @@ import so.glad.serializer.StreamSerializer;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.net.URLEncoder;
 import java.util.Date;
 import java.util.Properties;
 
 /**
- * Created by Cartoon on 2015/3/26.
+ * @author Cartoon
+ * on 2015/3/26.
  */
 public abstract class AbstractOperations {
 

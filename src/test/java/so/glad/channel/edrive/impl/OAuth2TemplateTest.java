@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * Created by Cartoon on 2015/3/27.
+ * @author by Cartoon on 2015/3/27.
  */
 public class OAuth2TemplateTest {
 

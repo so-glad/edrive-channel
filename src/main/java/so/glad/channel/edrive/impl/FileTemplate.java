@@ -11,7 +11,8 @@ import so.glad.client.http.HttpMethod;
 import java.net.URLEncoder;
 
 /**
- * Created by Cartoon on 2015/3/26.
+ * @author Cartoon
+ * on 2015/3/26.
  */
 public class FileTemplate extends AbstractOperations implements FileOperations {
 
